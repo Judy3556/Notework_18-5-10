@@ -24,5 +24,28 @@ namespace NoteBook
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            System.IO.File.WriteAllText(@"C:\git\NoteBook\Save1.txt", Textarea.Text);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            System.IO.File.ReadAllText(@"C:\git\NoteBook\Save1.txt");
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog dig = new Microsoft.Win32.SaveFileDialog();
+
+            //显示视窗
+            Nullable<bool> result = dig.ShowDialog();
+            if(result ==true)
+            {
+                //写入
+                System.IO.File.WriteAllText(dig.FileName, Textarea.Text);
+            }
+        }
     }
 }

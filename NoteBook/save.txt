@@ -1,0 +1,2 @@
+System.IO.File.WriteAllText(@"C:C:\git\NoteBook\Save .txt",Textarea.Text);
+C:\git\NoteBook

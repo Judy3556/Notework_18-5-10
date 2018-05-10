@@ -15,5 +15,14 @@
         
         <!-- 内容-->
         <Rectangle Grid.Column="1" Fill="Gray"></Rectangle>
+        <StackPanel Grid.Column="1">
+            <Button Click="Button_Click" >Open</Button>
+            <Button Click="Button_Click_1">Save</Button>
+            <Button Click="Button_Click_2" >9</Button>
+        </StackPanel>
+        
+        <!--左边打字区-->
+        <TextBox x:Name="Textarea" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+        
     </Grid>
 </Window>
