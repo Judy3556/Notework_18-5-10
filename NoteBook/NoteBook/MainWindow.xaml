@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <!-- 定义格子-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         
+        <!-- 内容-->
+        <Rectangle Grid.Column="1" Fill="Gray"></Rectangle>
     </Grid>
 </Window>
