@@ -50,7 +50,9 @@ namespace NoteBook
 
         private void CloseButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+           
+                this.Close();
+          
         }
 
         //停用關閉按鈕
