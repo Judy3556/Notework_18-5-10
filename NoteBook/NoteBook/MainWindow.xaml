@@ -64,6 +64,7 @@
         </Style>
     </Window.Resources>
     <Grid>
+
         <!-- 定义格子-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -77,10 +78,20 @@
             <Button Click="Button_Click" Background="Black" Foreground="White" Height="50" Style="{DynamicResource MyButtonStyle}" >Open</Button>
             <Button Click="Button_Click_1" Background="Black" Foreground="White" Height="50">Save</Button>
             <Button Click="Button_Click_2" Background="Black" Foreground="White" Height=" 50">Save as</Button>
+            
         </StackPanel>
 
         <!--左边打字区-->
         <TextBox Background="Gray" Opacity=" 0.2" x:Name="Textarea" AcceptsReturn="True" TextWrapping="Wrap" ></TextBox>
+        <Image Grid.ColumnSpan="2" Margin="10,-11,7,0" Source="Clouds.png" Stretch="Fill"/>
 
+        <StackPanel Height=" 30" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Horizontal">
+            <!--最小化按鈕-->
+            <Ellipse Width="15" Height="15" Fill="LimeGreen" ></Ellipse>
+            <!--關閉按鈕-->
+            <Ellipse Width="15" Height="15" Fill="Coral" Margin="8" x:Name="CloseButton" MouseLeftButtonDown="CloseButton_MouseLeftButtonDown"></Ellipse>
+            
+        </StackPanel>
+        
     </Grid>
 </Window>

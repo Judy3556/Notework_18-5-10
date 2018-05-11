@@ -43,9 +43,22 @@ namespace NoteBook
             Nullable<bool> result = dig.ShowDialog();
             if(result ==true)
             {
-                //写入
+                //写入文本中
                 System.IO.File.WriteAllText(dig.FileName, Textarea.Text);
             }
         }
+
+        private void CloseButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        //停用關閉按鈕
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+
     }
 }
