@@ -59,7 +59,7 @@ namespace NoteBook
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            
         }
 
         //更改主體顏色為黑色
@@ -118,6 +118,14 @@ namespace NoteBook
         private void ModelSize_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void Grid_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
         }
     }
 }
