@@ -81,18 +81,27 @@
         <!-- 内容-->
         <Rectangle Grid.Column="1" Fill="Black" x:Name="RightBox"></Rectangle>
         <StackPanel Grid.Column="1">
-            <Button Click="Button_Click" x:Name="OpenBtn" Background="Black" Foreground="White" Height="50" Style="{DynamicResource MyButtonStyle}" >Open</Button>
-            <Button Click="Button_Click_1" Background="Black" Foreground="White" Height="50">Save</Button>
-            <Button Click="Button_Click_2" Background="Black" Foreground="White" Height=" 50">Save as</Button>
+            <Button Click="Button_Click" BorderBrush="Black" x:Name="OpenBtn" Background="Black" Foreground="White" Height="50" Style="{DynamicResource MyButtonStyle}" >Open</Button>
+            <Button Click="Button_Click_1" BorderBrush="Black" x:Name="SaveBtn" Background="Black" Foreground="White" Height="50">Save</Button>
+            <Button Click="Button_Click_2" BorderBrush="Black" x:Name="SaveasBtn" Background="Black" Foreground="White" Height=" 50">Save as</Button>
             <StackPanel Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Horizontal">
+                <!--更換主體顏色-->
                 <Ellipse Width=" 20" Height=" 20" Fill="Black" Margin=" 10 10 10 10" Stroke="White" StrokeThickness="3" x:Name="ChangeBlack" MouseLeftButtonDown="ChangeBlack_MouseLeftButtonDown" ></Ellipse>
-                <Ellipse Width=" 20" Height=" 20" Fill="Yellow" Margin="30 10 60 10" InkCanvas.Left="200" Stroke="White" StrokeThickness="3" x:Name="ChangeYellow" MouseLeftButtonDown="ChangeYellow_MouseLeftButtonDown"></Ellipse>
+                <Ellipse Width=" 20" Height=" 20" Fill="BurlyWood" Margin="30 10 60 10" InkCanvas.Left="200" Stroke="White" StrokeThickness="3" x:Name="ChangeYellow" MouseLeftButtonDown="ChangeYellow_MouseLeftButtonDown"></Ellipse>
+                
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Margin="10" Background="Black" BorderBrush="Black" Foreground="White" x:Name="SmallSize" MouseLeftButtonDown="SmallSize_MouseLeftButtonDown">A</Button>
+                <Button Margin="10" Background="Black" BorderBrush="Black" Foreground="White" x:Name="ModelSize" MouseLeftButtonDown="ModelSize_MouseLeftButtonDown" Click="ModelSize_Click">A</Button>
+                <Button Margin="10" Background="Black" BorderBrush="Black" Foreground="White" x:Name="HugeSize" MouseLeftButtonDown="HugeSize_MouseLeftButtonDown">A</Button>
+
             </StackPanel>
 
         </StackPanel>
 
         <!--左边打字区-->
-        <TextBox Background="Gray" Opacity=" 0.2" x:Name="Textarea" AcceptsReturn="True" TextWrapping="Wrap" ></TextBox>
+        <TextBox Background="LightGray" FontSize="15" Foreground="Black" Opacity=" 1" x:Name="Textarea" AcceptsReturn="True" TextWrapping="Wrap" ></TextBox>
+        
 
 
         <!--關閉按鈕-->
