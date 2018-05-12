@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NoteBook"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" AllowsTransparency="True" WindowStyle="None" Opacity="0.99">
+        Title="MainWindow" Height="350" Width="525" AllowsTransparency="True" WindowStyle="None" Opacity="0.99" Background="Transparent">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -66,25 +66,28 @@
     <Window.TaskbarItemInfo>
         <TaskbarItemInfo/>
     </Window.TaskbarItemInfo>
-    <Grid Width=" 517" Height="319" MouseMove="Grid_MouseMove">
+    <Grid Width=" 517" Height="319" MouseMove="Grid_MouseMove" >
         
         <!-- 版面區塊-->
-        <Grid.RowDefinitions>
-            <RowDefinition Height=" 390" ></RowDefinition>
+        <Grid.RowDefinitions >
+            <RowDefinition Height=" 390"  ></RowDefinition>
             <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
+
 
         <!-- 定义格子-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="200" ></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
 
         <!-- 内容-->
+        
 
         <Rectangle Grid.Column="1" Fill="Black" x:Name="RightBox" ></Rectangle>
         <StackPanel Grid.Column="1">
+            <Border CornerRadius="15,15,1,1" Margin="1"></Border>
             <Button Click="Button_Click" BorderBrush="Black" x:Name="OpenBtn" Background="Black" Foreground="White" Height="50" Style="{DynamicResource MyButtonStyle}" >Open</Button>
             <Button Click="Button_Click_1" BorderBrush="Black" x:Name="SaveBtn" Background="Black" Foreground="White" Height="50">Save</Button>
             <Button Click="Button_Click_2" BorderBrush="Black" x:Name="SaveasBtn" Background="Black" Foreground="White" Height=" 50">Save as</Button>
@@ -105,9 +108,10 @@
         </StackPanel>
 
         <!--左边打字区-->
-        
-        <TextBox Background="LightGray" BorderBrush="White" FontSize="15" Foreground="Black" Opacity=" 1" x:Name="Textarea" AcceptsReturn="True" TextWrapping="Wrap" ></TextBox>
+        <Border CornerRadius="15 15 0 0" Margin="3">
 
+        <TextBox Background="LightGray" BorderBrush="White" FontSize="15" Foreground="Black" Opacity=" 1" x:Name="Textarea" AcceptsReturn="True" TextWrapping="Wrap" ></TextBox>
+        </Border>
 
         <!--關閉按鈕-->
         <StackPanel Height="40" VerticalAlignment="Top" HorizontalAlignment="Right">
