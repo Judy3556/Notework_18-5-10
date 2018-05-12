@@ -50,17 +50,32 @@ namespace NoteBook
 
         private void CloseButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-           
-                this.Close();
-          
+            this.Close();
         }
 
-        //停用關閉按鈕
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            e.Cancel = true;
+
         }
 
+        //更改主體顏色為黑色
+        private void ChangeBlack_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Textarea.Background= Brushes.Black;
+            RightBox.Fill = Brushes.Black;
+            OpenBtn.Background = Brushes.Black;
+            SaveasBtn.Background = Brushes.Black;
+            SaveBtn.Background = Brushes.Black;
+        }
 
+        //更換主題顏色為黃色
+        private void ChangeYellow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Textarea.Background = Brushes.Khaki;
+            RightBox.Fill = Brushes.BurlyWood;
+            OpenBtn.Background = Brushes.BurlyWood;
+            SaveasBtn.Background = Brushes.BurlyWood;
+            SaveBtn.Background = Brushes.BurlyWood;
+        }
     }
 }
