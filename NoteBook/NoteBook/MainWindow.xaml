@@ -79,6 +79,7 @@
 
 
         <!-- 内容-->
+        <Image Source="C:\git\notebook\NoteBook\NoteBook\Clouds.png"></Image>
         <Rectangle Grid.Column="1" Fill="Black" x:Name="RightBox"></Rectangle>
         <StackPanel Grid.Column="1">
             <Button Click="Button_Click" BorderBrush="Black" x:Name="OpenBtn" Background="Black" Foreground="White" Height="50" Style="{DynamicResource MyButtonStyle}" >Open</Button>
@@ -100,13 +101,13 @@
         </StackPanel>
 
         <!--左边打字区-->
-        <TextBox Background="LightGray" FontSize="15" Foreground="Black" Opacity=" 1" x:Name="Textarea" AcceptsReturn="True" TextWrapping="Wrap" ></TextBox>
         
+        <TextBox Background="LightGray" FontSize="15" Foreground="Black" Opacity=" 1" x:Name="Textarea" AcceptsReturn="True" TextWrapping="Wrap" ></TextBox>
 
 
         <!--關閉按鈕-->
         <StackPanel Height="40" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <Ellipse Width=" 15" Height=" 15" Fill="Coral" Margin="8" x:Name="CloseButton" MouseLeftButtonDown="CloseButton_MouseLeftButtonDown"></Ellipse>
+            <Ellipse Width=" 15" Height=" 15" Fill="Coral" Margin="8" x:Name="CloseButton" MouseLeftButtonDown="CloseButton_MouseLeftButtonDown" ></Ellipse>
         </StackPanel>
 
     </Grid>
