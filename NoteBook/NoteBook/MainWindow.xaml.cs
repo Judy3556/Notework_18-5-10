@@ -34,6 +34,7 @@ namespace NoteBook
             InitializeComponent();
         }
 
+        // 打開原有文檔
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (saveText != thisText)
@@ -80,7 +81,7 @@ namespace NoteBook
             }
         }
 
-
+        // 儲存文件
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (fileName == newFileName)
@@ -94,30 +95,28 @@ namespace NoteBook
             }
         }
 
+        // 另存新檔
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.SaveFileDialog dig = new Microsoft.Win32.SaveFileDialog();
 
-            //显示视窗
+            // 显示视窗
             Nullable<bool> result = dig.ShowDialog();
             if(result ==true)
             {
-                //写入文本中
+                // 写入文本中
                 System.IO.File.WriteAllText(dig.FileName, Textarea.Text);
             }
         }
 
+        // 關閉按鈕的設置
         private void CloseButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
         }
 
-        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
 
-        //更改主體顏色為黑色
+        // 更改主體顏色為黑色
         private void ChangeBlack_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Textarea.Background= Brushes.LightGray;
@@ -136,7 +135,7 @@ namespace NoteBook
             HugeSize.BorderBrush= Brushes.Black;
         }
 
-        //更換主題顏色為黃色
+        // 更換主題顏色為黃色
         private void ChangeYellow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Textarea.Background = Brushes.LightYellow;
@@ -154,27 +153,9 @@ namespace NoteBook
             ModelSize.BorderBrush= Brushes.BurlyWood;
             HugeSize.BorderBrush= Brushes.BurlyWood;
         }
+       
 
-        private void SmallSize_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            Textarea.FontSize = 10;
-        }
-
-        private void ModelSize_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void HugeSize_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            Textarea.FontSize = 20;
-        }
-
-        private void ModelSize_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
+        // 窗體的移動
         private void Grid_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -183,6 +164,7 @@ namespace NoteBook
             }
         }
 
+        // 字體大小的修改
         private void SmallSize_Click(object sender, RoutedEventArgs e)
         {
             Textarea.FontSize = 15;
@@ -191,6 +173,11 @@ namespace NoteBook
         private void HugeSize_Click(object sender, RoutedEventArgs e)
         {
             Textarea.FontSize = 25;
+        }
+
+        private void ModelSize_Click(object sender, RoutedEventArgs e)
+        {
+            Textarea.FontSize = 20;
         }
     }
 }
