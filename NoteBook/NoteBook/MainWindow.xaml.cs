@@ -19,10 +19,15 @@ namespace NoteBook
     /// MainWindow.xaml 的互動邏輯
     /// </summary>
     public partial class MainWindow : Window
-       
 
     {
-         
+        string fileName = "";
+        string newFileName = "";
+
+        string saveText="";
+        string thisText = "";
+
+        
 
         public MainWindow()
         {
@@ -31,12 +36,62 @@ namespace NoteBook
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            System.IO.File.WriteAllText(@"C:\git\NoteBook\Save1.txt", Textarea.Text);
+            if (saveText != thisText)
+                if (MessageBox.Show("Do you want to Save?", "Save or Not", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    Save();
+                    Open();
+                }
+                else
+                {
+                    Open();
+                }
+            else
+            {
+                Open();
+            }
+
+
         }
+        void Save()
+        {
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                System.IO.File.WriteAllText(dlg.FileName, Textarea.Text);
+                fileName = dlg.FileName;
+                saveText = thisText; ;
+                Title.Text = dlg.SafeFileName + ".txt";
+            }
+        }
+
+
+        void Open()
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                Textarea.Text = System.IO.File.ReadAllText(dlg.FileName);
+                fileName = dlg.FileName;
+                saveText = Textarea.Text;
+                Title.Text = dlg.SafeFileName + ".txt";
+            }
+        }
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            System.IO.File.ReadAllText(@"C:\git\NoteBook\Save1.txt");
+            if (fileName == newFileName)
+            {
+                Save();
+            }
+            else
+            {
+                System.IO.File.WriteAllText(fileName, Textarea.Text);
+                saveText = thisText;
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -126,6 +181,16 @@ namespace NoteBook
             {
                 this.DragMove();
             }
+        }
+
+        private void SmallSize_Click(object sender, RoutedEventArgs e)
+        {
+            Textarea.FontSize = 15;
+        }
+
+        private void HugeSize_Click(object sender, RoutedEventArgs e)
+        {
+            Textarea.FontSize = 25;
         }
     }
 }

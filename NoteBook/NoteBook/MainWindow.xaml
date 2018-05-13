@@ -73,6 +73,8 @@
             <RowDefinition Height=" 390"  ></RowDefinition>
             <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
+        
+        
 
 
         <!-- 定义格子-->
@@ -80,6 +82,10 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="200" ></ColumnDefinition>
         </Grid.ColumnDefinitions>
+
+        <Grid>
+            <TextBlock x:Name="Title"></TextBlock>
+        </Grid>
 
 
         <!-- 内容-->
@@ -97,12 +103,11 @@
                 <Ellipse Width=" 20" Height=" 20" Fill="BurlyWood" Margin="30 10 60 10" InkCanvas.Left="200" Stroke="White" StrokeThickness="3" x:Name="ChangeYellow" MouseLeftButtonDown="ChangeYellow_MouseLeftButtonDown"></Ellipse>
                 
             </StackPanel>
-
+            <!--修改字體大小-->
             <StackPanel Orientation="Horizontal">
-                <Button Margin="10" Background="Black" BorderBrush="Black" Foreground="White" x:Name="SmallSize" MouseLeftButtonDown="SmallSize_MouseLeftButtonDown">A</Button>
-                <Button Margin="10" Background="Black" BorderBrush="Black" Foreground="White" x:Name="ModelSize" MouseLeftButtonDown="ModelSize_MouseLeftButtonDown" Click="ModelSize_Click">A</Button>
-                <Button Margin="10" Background="Black" BorderBrush="Black" Foreground="White" x:Name="HugeSize" MouseLeftButtonDown="HugeSize_MouseLeftButtonDown">A</Button>
-
+                <Button Margin="30" Background="Black" FontSize="15" BorderBrush="Black" Foreground="White" x:Name="SmallSize" Click="SmallSize_Click">A</Button>
+                <Button Margin="5" Background="Black" FontSize="20" BorderBrush="Black" Foreground="White" x:Name="ModelSize" Click="ModelSize_Click">A</Button>
+                <Button Margin="30" Background="Black" FontSize="25" BorderBrush="Black" Foreground="White" x:Name="HugeSize" Click="HugeSize_Click">A</Button>
             </StackPanel>
 
         </StackPanel>
