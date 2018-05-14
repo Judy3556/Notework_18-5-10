@@ -73,10 +73,7 @@
             <RowDefinition Height=" 390"  ></RowDefinition>
             <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
-        
-        
-
-
+       
         <!-- 定义格子-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
@@ -87,10 +84,7 @@
             <TextBlock x:Name="Title"></TextBlock>
         </Grid>
 
-
         <!-- 内容-->
-        
-
         <Rectangle Grid.Column="0" Fill="Black" x:Name="RightBox" ></Rectangle>
         <StackPanel Grid.Column="0">
             <Border CornerRadius="15,15,1,1" Margin="1"></Border>
@@ -98,6 +92,7 @@
             <Button Click="Button_Click_1" BorderBrush="Black" x:Name="SaveBtn" Background="Black" Foreground="White" Height="50">Save</Button>
             <Button Click="Button_Click_2" BorderBrush="Black" x:Name="SaveasBtn" Background="Black" Foreground="White" Height=" 50">Save as</Button>
             <StackPanel Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Horizontal">
+                
                 <!--更換主體顏色-->
                 <Ellipse Width=" 20" Height=" 20" Fill="Black" Margin=" 10 10 10 10" Stroke="White" StrokeThickness="3" x:Name="ChangeBlack" MouseLeftButtonDown="ChangeBlack_MouseLeftButtonDown" ></Ellipse>
                 <Ellipse Width=" 20" Height=" 20" Fill="BurlyWood" Margin="30 10 60 10" InkCanvas.Left="200" Stroke="White" StrokeThickness="3" x:Name="ChangeYellow" MouseLeftButtonDown="ChangeYellow_MouseLeftButtonDown"></Ellipse>
@@ -109,12 +104,10 @@
                 <Button Margin="5" Background="Black" FontSize="20" BorderBrush="Black" Foreground="White" x:Name="ModelSize" Click="ModelSize_Click">A</Button>
                 <Button Margin="30" Background="Black" FontSize="25" BorderBrush="Black" Foreground="White" x:Name="HugeSize" Click="HugeSize_Click">A</Button>
             </StackPanel>
-
         </StackPanel>
 
         <!--左边打字区-->
         <Border CornerRadius="15 15 0 0" Grid.Column="1" Margin="3">
-
         <TextBox Background="LightGray" BorderBrush="White" FontSize="15" Foreground="Black" Opacity=" 1" x:Name="Textarea" AcceptsReturn="True" TextWrapping="Wrap" ></TextBox>
         </Border>
 
