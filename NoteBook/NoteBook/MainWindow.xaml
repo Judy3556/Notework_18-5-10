@@ -79,8 +79,8 @@
 
         <!-- 定义格子-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="200" ></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition  ></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Grid>
@@ -91,8 +91,8 @@
         <!-- 内容-->
         
 
-        <Rectangle Grid.Column="1" Fill="Black" x:Name="RightBox" ></Rectangle>
-        <StackPanel Grid.Column="1">
+        <Rectangle Grid.Column="0" Fill="Black" x:Name="RightBox" ></Rectangle>
+        <StackPanel Grid.Column="0">
             <Border CornerRadius="15,15,1,1" Margin="1"></Border>
             <Button Click="Button_Click" BorderBrush="Black" x:Name="OpenBtn" Background="Black" Foreground="White" Height="50" Style="{DynamicResource MyButtonStyle}" >Open</Button>
             <Button Click="Button_Click_1" BorderBrush="Black" x:Name="SaveBtn" Background="Black" Foreground="White" Height="50">Save</Button>
@@ -113,13 +113,13 @@
         </StackPanel>
 
         <!--左边打字区-->
-        <Border CornerRadius="15 15 0 0" Margin="3">
+        <Border CornerRadius="15 15 0 0" Grid.Column="1" Margin="3">
 
         <TextBox Background="LightGray" BorderBrush="White" FontSize="15" Foreground="Black" Opacity=" 1" x:Name="Textarea" AcceptsReturn="True" TextWrapping="Wrap" ></TextBox>
         </Border>
 
         <!--關閉按鈕-->
-        <StackPanel Height="40" VerticalAlignment="Top" HorizontalAlignment="Right">
+        <StackPanel Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="1">
             <Ellipse Width=" 15" Height=" 15" Fill="Coral" Margin="8" x:Name="CloseButton" MouseLeftButtonDown="CloseButton_MouseLeftButtonDown" ></Ellipse>
         </StackPanel>
 
