@@ -19,8 +19,8 @@ namespace NoteBook
     /// MainWindow.xaml 的互動邏輯
     /// </summary>
     public partial class MainWindow : Window
-
     {
+        
         string fileName = "";
         string newFileName = "";
 
@@ -119,7 +119,28 @@ namespace NoteBook
         // 更改主體顏色為黑色
         private void ChangeBlack_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Textarea.Background= Brushes.LightGray;
+            Textarea.Background = Brushes.Gray;
+            RightBox.Fill = Brushes.Black ;
+            OpenBtn.Background = Brushes.Black;
+            SaveasBtn.Background = Brushes.Black;
+            SaveBtn.Background = Brushes.Black;
+            OpenBtn.BorderBrush = Brushes.Black;
+            SaveasBtn.BorderBrush = Brushes.Black;
+            SaveBtn.BorderBrush = Brushes.Black;
+            SmallSize.Background = Brushes.Black;
+            ModelSize.Background = Brushes.Black ;
+            HugeSize.Background = Brushes.Black;
+            SmallSize.BorderBrush = Brushes.Black ;
+            ModelSize.BorderBrush= Brushes.Black ;
+            HugeSize.BorderBrush= Brushes.Black ;
+        }
+
+        // 更換主題顏色為黃色
+        private void ChangeYellow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            
+            //
+Textarea.Background= Brushes.LightGray;
             RightBox.Fill = Brushes.Black;
             OpenBtn.Background = Brushes.Black;
             SaveasBtn.Background = Brushes.Black;
@@ -133,25 +154,6 @@ namespace NoteBook
             SmallSize.BorderBrush = Brushes.Black;
             ModelSize.BorderBrush= Brushes.Black;
             HugeSize.BorderBrush= Brushes.Black;
-        }
-
-        // 更換主題顏色為黃色
-        private void ChangeYellow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            Textarea.Background = Brushes.LightYellow;
-            RightBox.Fill = Brushes.BurlyWood;
-            OpenBtn.Background = Brushes.BurlyWood;
-            SaveasBtn.Background = Brushes.BurlyWood;
-            SaveBtn.Background = Brushes.BurlyWood;
-            SaveBtn.BorderBrush = Brushes.BurlyWood;
-            OpenBtn.BorderBrush = Brushes.BurlyWood;
-            SaveasBtn.BorderBrush = Brushes.BurlyWood;
-            SmallSize.Background = Brushes.BurlyWood;
-            ModelSize.Background = Brushes.BurlyWood;
-            HugeSize.Background = Brushes.BurlyWood;
-            SmallSize.BorderBrush = Brushes.BurlyWood;
-            ModelSize.BorderBrush= Brushes.BurlyWood;
-            HugeSize.BorderBrush= Brushes.BurlyWood;
         }
        
 
@@ -178,6 +180,11 @@ namespace NoteBook
         private void ModelSize_Click(object sender, RoutedEventArgs e)
         {
             Textarea.FontSize = 20;
+        }
+
+        private void BigBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+           
         }
     }
 }
